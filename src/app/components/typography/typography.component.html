@@ -1,0 +1,26 @@
+<div class="section" style="background-color: black; margin-top: 100px;">
+  <div class="container">
+    <div id="licence-plate">
+      <center>
+        <h1 class="category">LICENCE PLATE DETECTION</h1>
+
+        <div id = licence-plate-img >
+        <img src="assets/img/landing-img.jpeg" alt="Ready for Scan" *ngIf="landingImage">
+
+          <button class="btn btn-primary" type="button" disabled *ngIf="isImageLoading">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+
+        <img [src]="imageToShow" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage">
+        <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage">
+      </div>
+      </center>
+    </div>
+  </div>
+</div>
+<div style="background-color: black;">
+  <center>
+    <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="getImageFromService()">Scan</button>
+  </center>
+</div>

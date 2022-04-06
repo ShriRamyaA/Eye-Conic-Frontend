@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-item" [routerLink]="['/index']" placement="bottom" ngbTooltip="Home Page">
+              <i class="now-ui-icons shopping_shop"></i>
+                EYE-CONIC
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular" target="_blank">
+                    <i class="now-ui-icons files_paper"></i>
+                    <p>About</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular" target="_blank">
+                      <i class="now-ui-icons tech_tv"></i>
+                      <p>Video Demo</p>
+                  </a>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/team']">
+                      <i class="now-ui-icons business_badge"></i>
+                      <p>Team</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro-angular" target="_blank">
+                        <i class="now-ui-icons arrows-1_share-66"></i>
+                        <p>End UI</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="wrapper">
+    <div class="section section-team text-center">
+        <div class="container">
+            <h2 class="title">Here is our team</h2>
+            <div class="team">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="team-player">
+                            <img src="assets/img/ryan.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                            <h4 class="title">Anil Kochera</h4>
+                            <p class="category text-primary">Master's Student</p>
+                            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-player">
+                            <img src="assets/img/ryan.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                            <h4 class="title">Naveen</h4>
+                            <p class="category text-primary">Master's Student</p>
+                            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-player">
+                            <img src="assets/img/DSC_2054-.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                            <h4 class="title">Shri Ramya Ashok</h4>
+                            <p class="category text-primary">Master's Student</p>
+                            <p class="description">I am a Master's in Computer Science Student currently in my second Semester. I have 3 years experience as 
+                                Full-Stack Developer.
+                            </p>
+                                <a href="https://www.linkedin.com/in/srashok96/" class="btn btn-primary btn-icon btn-round" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-player">
+                            <img src="assets/img/ryan.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                            <h4 class="title">Sunny</h4>
+                            <p class="category text-primary">Bachelor's Student</p>
+                            <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
+                                <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" data-background-color="black">
+        <div class="container">   
+            <div class="copyright">
+                &copy;
+              {{data | date: 'yyyy'}}, Designed by Eye-conic. Coded by Eye-conic.
+            </div>
+        </div>
+    </footer>
+</div>
