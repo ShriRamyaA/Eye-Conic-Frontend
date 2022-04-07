@@ -131,7 +131,6 @@
     }
 
     &.navbar-transparent{
-        background-color: $transparent-bg !important;
         box-shadow: none;
         color: $white-color;
         padding-top: 20px;
@@ -169,7 +168,7 @@
 }
 
 .bg-primary{
-    background-color: $primary-color !important;
+    background-color: #750f15 !important;
 }
 
 .bg-info{
