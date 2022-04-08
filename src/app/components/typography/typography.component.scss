@@ -7,6 +7,12 @@
     margin: 30px;
 }
 
-#scan-btn{
+#scan-btn, #check-btn{
     margin: 30px;
+    background-color: #750f15;
+    font-family: sans-serif;
+    font-size: medium;
+    text-transform: uppercase;
 }
+
+#scan-btn:hover, #check-btn:hover {background-color: #E7927F}

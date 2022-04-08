@@ -2,7 +2,7 @@
   <div class="container">
     <div id="licence-plate">
       <center>
-        <h1 class="category">LICENCE PLATE DETECTION</h1>
+        <h3 class="category">LICENCE PLATE DETECTION</h3>
 
         <div id = licence-plate-img >
         <img src="assets/img/landing-img.jpeg" alt="Ready for Scan" *ngIf="landingImage">
@@ -22,5 +22,6 @@
 <div style="background-color: black;">
   <center>
     <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="getImageFromService()">Scan</button>
+    <button class="btn btn-primary btn-round" id="check-btn" type="button" (click)="validateLicenceNumber()">Check Registration</button>
   </center>
 </div>
