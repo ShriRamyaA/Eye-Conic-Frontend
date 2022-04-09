@@ -12,6 +12,9 @@ export class TypographyComponent implements OnInit {
   landingImage = true;
   isImageLoading = false;
   errorPage = false;
+  licence_number = "ABC"
+  registered = true;
+  check = false;
 
   constructor(private imageService : ImageServiceService) { }
 
@@ -29,6 +32,7 @@ export class TypographyComponent implements OnInit {
    }
  
    getImageFromService() {
+    this.check = false;
        this.landingImage = false;
        this.isImageLoading = true;
        this.imageService.getImage().subscribe(data => {
@@ -39,5 +43,14 @@ export class TypographyComponent implements OnInit {
          this.errorPage = true;
          console.log(error);
        });
+   }
+
+   validateLicenceNumber() {
+     this.check = true;
+     this.imageService.checkRegistration(this.licence_number).subscribe(data => {
+        if( data=='yes') this.registered = true;
+        else this.registered = false;
+        console.log(this.registered);
+     })
    }
 }

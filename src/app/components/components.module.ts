@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TypographyComponent } from './typography/typography.component';
 import { ComponentsComponent } from './components.component';
-import { NumberComponent } from './number/number.component';
 
 @NgModule({
     imports: [
@@ -24,7 +23,6 @@ import { NumberComponent } from './number/number.component';
         ComponentsComponent,
         NavigationComponent,
         TypographyComponent,
-        NumberComponent
     ],
     exports:[ ComponentsComponent ]
 })

@@ -19,9 +19,30 @@
     </div>
   </div>
 </div>
+<center style="background-color: black;">
+      <div>
+      <span class="badge badge-success" id = 'licence-number'>Licence Plate Number is:</span>
+      </div>
+      <div>
+      <input type="text" value="{{licence_number}}" *ngIf="!isImageLoading" >
+      </div>
+</center>
 <div style="background-color: black;">
   <center>
     <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="getImageFromService()">Scan</button>
     <button class="btn btn-primary btn-round" id="check-btn" type="button" (click)="validateLicenceNumber()">Check Registration</button>
   </center>
 </div>
+<center>
+<div *ngIf="!registered && check" style="background-color: black;">
+  <span class="badge badge-success" id = 'check-registration'>This car is not Registered</span>
+  <div>
+    <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="issueTicket()">Issue Ticket</button>
+  </div>
+</div>
+<div *ngIf="registered && check" style="background-color: black;">
+  <span class="badge badge-success" id = 'check-registration'>This car is Registered</span>
+</div>
+</center>
+
+
