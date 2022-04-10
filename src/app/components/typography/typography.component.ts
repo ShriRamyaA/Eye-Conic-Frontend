@@ -35,8 +35,10 @@ export class TypographyComponent implements OnInit {
     this.check = false;
        this.landingImage = false;
        this.isImageLoading = true;
-       this.imageService.getImage().subscribe(data => {
-         this.createImageFromBlob(data);
+       this.imageService.getLicencePlateNumber().subscribe(data => {
+        this.licence_number = data;
+        console.log(data);
+        // this.displayImageOnUI();
          this.isImageLoading = false;
        }, error => {
          this.isImageLoading = false;
@@ -45,8 +47,17 @@ export class TypographyComponent implements OnInit {
        });
    }
 
+  //  displayImageOnUI(){
+  //   this.imageService.getImageFromDjango().subscribe(data => {
+  //     this.createImageFromBlob(data);
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  //  }
+
    validateLicenceNumber() {
      this.check = true;
+     console.log(this.licence_number);
      this.imageService.checkRegistration(this.licence_number).subscribe(data => {
         if( data=='yes') this.registered = true;
         else this.registered = false;

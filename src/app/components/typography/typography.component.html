@@ -12,7 +12,7 @@
             Loading...
           </button>
 
-        <img [src]="imageToShow" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage">
+        <img src="assets/img/license_plate_image.jpeg" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage">
         <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage">
       </div>
       </center>
@@ -24,7 +24,7 @@
       <span class="badge badge-success" id = 'licence-number'>Licence Plate Number is:</span>
       </div>
       <div>
-      <input type="text" value="{{licence_number}}" *ngIf="!isImageLoading" >
+      <input type="text" value="{{licence_number}}" *ngIf="!isImageLoading" [(ngModel)]="licence_number">
       </div>
 </center>
 <div style="background-color: black;">
