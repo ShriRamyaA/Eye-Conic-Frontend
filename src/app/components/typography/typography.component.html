@@ -34,7 +34,7 @@
     </tr>
     <tr>
       <th scope="row">Ticket Issued?</th>
-      <td>{{email}}. Email sent on {{email_time}}</td>
+      <td>{{email}} <span *ngIf="email == 'YES'">(Email sent on {{email_time}})</span></td>
     </tr>
   </tbody>
 </table>

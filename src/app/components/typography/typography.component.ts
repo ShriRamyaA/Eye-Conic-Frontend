@@ -13,8 +13,8 @@ export class TypographyComponent implements OnInit {
   isImageLoading = false;
   errorPage = false;
   licence_number = "7TRR812"
-  registered = "No";
-  email = "Yes";
+  registered = "NO";
+  email = "YES";
   date = "2022-04-10";
   time_hr="09";
   time_min="41";
@@ -42,8 +42,8 @@ export class TypographyComponent implements OnInit {
        this.imageService.checkImage().subscribe(data => {
         console.log(data);
         this.licence_number = data.license;
-        this.registered = data.userValidation;
-        this.email = data.email;
+        this.registered = data.userValidation.toUpperCase();
+        this.email = data.email.toUpperCase();
         this.email_time = data.day+' '+data.time_hr+':'+data.time_min;
          this.isImageLoading = false;
        }, error => {
