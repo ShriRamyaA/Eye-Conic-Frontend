@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageServiceService } from 'app/image-service.service';
-import 'assets/smtp.js';
-declare let Email: any;
 
 @Component({
     selector: 'app-typography',
