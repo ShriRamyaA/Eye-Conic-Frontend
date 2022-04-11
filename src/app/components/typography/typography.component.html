@@ -1,9 +1,8 @@
-<div class="section" style="background-color: black; margin-top: 100px;">
+<center>
+<div class="section" style="margin-top: 100px;">
   <div class="container">
     <div id="licence-plate">
-      <center>
-        <h3 class="category">LICENCE PLATE DETECTION</h3>
-
+        <h3 class="category" style="color: black;">LICENSE PLATE DETECTION</h3>
         <div id = licence-plate-img >
         <img src="assets/img/landing-img.jpeg" alt="Ready for Scan" *ngIf="landingImage">
 
@@ -12,37 +11,33 @@
             Loading...
           </button>
 
-        <img src="assets/img/license_plate_image.jpeg" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage">
-        <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage">
+        <img src="assets/img/license_plate_image.jpeg" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage &&!errorPage">
+        <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage" style=" height:250px; 
+        width:350px;">
       </div>
-      </center>
     </div>
   </div>
 </div>
-<center style="background-color: black;">
-      <div>
-      <span class="badge badge-success" id = 'licence-number'>Licence Plate Number is:</span>
-      </div>
-      <div>
-      <input type="text" value="{{licence_number}}" *ngIf="!isImageLoading" [(ngModel)]="licence_number">
-      </div>
-</center>
-<div style="background-color: black;">
-  <center>
-    <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="getImageFromService()">Scan</button>
-    <button class="btn btn-primary btn-round" id="check-btn" type="button" (click)="validateLicenceNumber()">Check Registration</button>
-  </center>
+<div>
+    <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="scanImage()">Scan</button>
 </div>
-<center>
-<div *ngIf="!registered && check" style="background-color: black;">
-  <span class="badge badge-success" id = 'check-registration'>This car is not Registered</span>
-  <div>
-    <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="issueTicket()">Issue Ticket</button>
-  </div>
-</div>
-<div *ngIf="registered && check" style="background-color: black;">
-  <span class="badge badge-success" id = 'check-registration'>This car is Registered</span>
-</div>
+<table class="table table-striped" [ngStyle] ="(!isImageLoading) ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+ <caption>Scan Results:</caption>
+  <tbody>
+    <tr>
+      <th scope="row">License Plate Number: </th>
+      <td>{{licence_number}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Registered?</th>
+      <td>{{registered}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Ticket Issued?</th>
+      <td>{{email}}. Email sent on {{email_time}}</td>
+    </tr>
+  </tbody>
+</table>
 </center>
 
 

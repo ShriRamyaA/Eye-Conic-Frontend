@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageServiceService } from 'app/image-service.service';
+import 'assets/smtp.js';
+declare let Email: any;
 
 @Component({
     selector: 'app-typography',
@@ -8,60 +10,48 @@ import { ImageServiceService } from 'app/image-service.service';
 })
 export class TypographyComponent implements OnInit {
 
-  imageToShow: any;
+//   imageToShow: any;
   landingImage = true;
   isImageLoading = false;
   errorPage = false;
-  licence_number = "ABC"
-  registered = true;
-  check = false;
-
+  licence_number = "7TRR812"
+  registered = "No";
+  email = "Yes";
+  date = "2022-04-10";
+  time_hr="09";
+  time_min="41";
+  email_time = "2022-04-10 09:41";
   constructor(private imageService : ImageServiceService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-       this.imageToShow = reader.result;
-    }, false);
+//   createImageFromBlob(image: Blob) {
+//     let reader = new FileReader();
+//     reader.addEventListener("load", () => {
+//        this.imageToShow = reader.result;
+//     }, false);
  
-    if (image) {
-       reader.readAsDataURL(image);
-    }
-   }
+//     if (image) {
+//        reader.readAsDataURL(image);
+//     }
+//    }
  
-   getImageFromService() {
-    this.check = false;
+   scanImage() {
+      this.errorPage = false;
        this.landingImage = false;
        this.isImageLoading = true;
-       this.imageService.getLicencePlateNumber().subscribe(data => {
-        this.licence_number = data;
+       this.imageService.checkImage().subscribe(data => {
         console.log(data);
-        // this.displayImageOnUI();
+        this.licence_number = data.license;
+        this.registered = data.userValidation;
+        this.email = data.email;
+        this.email_time = data.day+' '+data.time_hr+':'+data.time_min;
          this.isImageLoading = false;
        }, error => {
          this.isImageLoading = false;
          this.errorPage = true;
          console.log(error);
        });
-   }
-
-  //  displayImageOnUI(){
-  //   this.imageService.getImageFromDjango().subscribe(data => {
-  //     this.createImageFromBlob(data);
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  //  }
-
-   validateLicenceNumber() {
-     this.check = true;
-     console.log(this.licence_number);
-     this.imageService.checkRegistration(this.licence_number).subscribe(data => {
-        if( data=='yes') this.registered = true;
-        else this.registered = false;
-        console.log(this.registered);
-     })
    }
 }
