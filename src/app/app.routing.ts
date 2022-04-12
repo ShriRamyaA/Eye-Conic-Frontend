@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
+import { ExamplesComponent } from './examples/examples.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
     { path: 'team',                 component: LandingComponent },
+    { path: 'about',                 component: ExamplesComponent },
 ];
 
 @NgModule({

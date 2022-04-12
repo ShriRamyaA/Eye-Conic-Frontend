@@ -17,11 +17,11 @@ import { ComponentsComponent } from './components.component';
         NouisliderModule,
         RouterModule,
         JwBootstrapSwitchNg2Module
-      ],
+    ],
     declarations: [
         ComponentsComponent,
         TypographyComponent,
     ],
-    exports:[ ComponentsComponent ]
+    exports: [ComponentsComponent]
 })
 export class ComponentsModule { }

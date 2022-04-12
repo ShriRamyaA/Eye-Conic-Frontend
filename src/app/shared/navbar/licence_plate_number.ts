@@ -1,3 +1,4 @@
+// Licence Plate Number and Scan Results Object 
 export interface LicencePlateNumber {
     'license' : string;
     'userValidation': string;

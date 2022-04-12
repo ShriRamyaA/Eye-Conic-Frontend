@@ -1,13 +1,14 @@
-#licence-plate-img{
-    height:200px; 
-    width:350px;
+#licence-plate-img {
+    height: 200px;
+    width: 350px;
 }
 
-#licence-palte{
+#licence-palte {
     margin: 30px;
 }
 
-#scan-btn, #check-btn{
+#scan-btn,
+#check-btn {
     // margin: 30px;
     background-color: #750f15;
     font-family: sans-serif;
@@ -15,9 +16,12 @@
     text-transform: uppercase;
 }
 
-#scan-btn:hover, #check-btn:hover {background-color: #E7927F}
+#scan-btn:hover,
+#check-btn:hover {
+    background-color: #E7927F
+}
 
-#licence-number{
+#licence-number {
     font-family: sans-serif;
     font-size: large;
     color: green;
@@ -41,4 +45,3 @@ img {
     width: 100%;
     height: 100%;
 }
-

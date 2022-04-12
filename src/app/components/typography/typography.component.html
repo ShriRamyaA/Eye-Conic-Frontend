@@ -1,43 +1,46 @@
+<!--License Plate Scan part of the UI-->
 <center>
-<div class="section" style="margin-top: 100px;">
-  <div class="container">
-    <div id="licence-plate">
+  <div class="section" style="margin-top: 100px;">
+    <div class="container">
+      <div id="licence-plate">
         <h3 class="category" style="color: black;">LICENSE PLATE DETECTION</h3>
-        <div id = licence-plate-img >
-        <img src="assets/img/landing-img.jpeg" alt="Ready for Scan" *ngIf="landingImage">
+        <div id=licence-plate-img>
+          <img src="assets/img/landing-img.jpeg" alt="Ready for Scan" *ngIf="landingImage">
 
           <button class="btn btn-primary" type="button" disabled *ngIf="isImageLoading">
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
           </button>
 
-        <img src="assets/img/license_plate_image.jpeg" alt="Scanned Licence Plate" *ngIf="!isImageLoading && !landingImage &&!errorPage">
-        <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage" style=" height:250px; 
+          <img src="assets/img/license_plate_image.jpeg" alt="Scanned Licence Plate"
+            *ngIf="!isImageLoading && !landingImage &&!errorPage">
+          <img src="assets/img/Error.png" alt="Could not Scan Licence Plate" *ngIf="errorPage" style=" height:250px; 
         width:350px;">
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div>
+  <!--On Click of Scan button, trigger scanImage() function-->
+  <div>
     <button class="btn btn-primary btn-round" id="scan-btn" type="button" (click)="scanImage()">Scan</button>
-</div>
-<table class="table table-striped" [ngStyle] ="(!isImageLoading) ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
- <caption>Scan Results:</caption>
-  <tbody>
-    <tr>
-      <th scope="row">License Plate Number: </th>
-      <td>{{licence_number}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Registered?</th>
-      <td>{{registered}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Ticket Issued?</th>
-      <td>{{email}} <span *ngIf="email == 'YES'">(Email sent on {{email_time}})</span></td>
-    </tr>
-  </tbody>
-</table>
+  </div>
+  <!--Display License Plate Scan Results-->
+  <table class="table table-striped"
+    [ngStyle]="(!isImageLoading) ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+    <caption>Scan Results:</caption>
+    <tbody>
+      <tr>
+        <th scope="row">License Plate Number: </th>
+        <td>{{licence_number}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Registered?</th>
+        <td>{{registered}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Ticket Issued?</th>
+        <td>{{email}} <span *ngIf="email == 'YES'">(Email sent on {{email_time}})</span></td>
+      </tr>
+    </tbody>
+  </table>
 </center>
-
-
